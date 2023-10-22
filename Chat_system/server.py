@@ -1,11 +1,17 @@
+# * Libraries:
+
 import socket
 import threading
+
+# * Constants:
 
 HEADER = 64
 PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
+
+# * Variables:
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
@@ -49,5 +55,9 @@ def start():
 
 # * Main:
 
-print("[STARTING] Server is starting...")
-start()
+def main():
+    print("[STARTING] Server is starting...")
+    start()
+
+if __name__ == "__main__":
+    main()

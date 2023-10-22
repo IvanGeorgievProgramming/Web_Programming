@@ -1,8 +1,14 @@
+# * Libraries:
+
 import socket
 from datetime import datetime
 
+# * Constants:
+
 HEADER = 64
 FORMAT = 'utf-8'
+
+# * Classes:
 
 class Client:
     def __init__(self):
@@ -44,7 +50,7 @@ class Client:
             print("Disconnected from the server.")
             exit(0)
         else:
-            print("Not connected to any server.")
+            print("[ERROR] Not connected to any server.")
 
     def handle_command(self, command):
         if command.startswith("/connect "):
@@ -60,7 +66,9 @@ class Client:
         elif command == "/quit":
             self.quit()
         else:
-            print("Unknown command")
+            print("[ERROR] Unknown command")
+
+# * Main:
 
 def main():
     client = Client()
